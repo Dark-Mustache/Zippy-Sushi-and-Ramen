@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import style from "./HomePage.module.css";
 import sushiOne from "../../assets/sushi-1.png";
@@ -10,6 +11,11 @@ import fish from "../../assets/fish-cutting.gif";
 import HomePageNav from "../../componenets/UI/HomePageNav";
 import HomepageButton from "../../componenets/Layout/HomepageButton";
 const HomePage = () => {
+  const { home } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [home]);
+
   const [isTextValid, setIsTextValid] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isTextareaValid, setIsTextareaValid] = useState(false);
