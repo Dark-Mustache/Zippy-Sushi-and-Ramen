@@ -1,10 +1,15 @@
-import { useContext } from "react";
-import { Link, Outlet, NavLink } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, Outlet, NavLink, useLocation } from "react-router-dom";
 import style from "./MealsRoot.module.css";
 import App from "../../App";
 import CartContext from "../../componenets/Store/cart-context";
 
 const MealsRoot = () => {
+  const { mealRoot } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [mealRoot]);
+
   const ctx = useContext(CartContext);
   console.log(ctx.isOne);
   const backHandler = () => {
