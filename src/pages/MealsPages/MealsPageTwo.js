@@ -13,7 +13,7 @@ const MealsPageTwo = () => {
       return;
     }
     ctx.changeMenu(1);
-  }, [preventFirst]);
+  }, [preventFirst, ctx.changeMenu]);
   return (
     <div className={style.contain}>
       <AvailableMealsTwo />

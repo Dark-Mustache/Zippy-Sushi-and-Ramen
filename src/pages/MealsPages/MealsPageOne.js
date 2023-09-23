@@ -12,7 +12,7 @@ const MealsPageOne = () => {
       return;
     }
     ctx.changeMenu(1);
-  }, []);
+  }, [preventFirst, ctx]);
   return (
     <div>
       <AvailableMeals />

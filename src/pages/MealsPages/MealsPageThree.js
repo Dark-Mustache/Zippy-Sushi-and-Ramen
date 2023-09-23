@@ -12,7 +12,7 @@ const MealsPageThree = () => {
       return;
     }
     ctx.changeMenu(1);
-  }, []);
+  }, [preventFirst, ctx.changeMenu]);
   return (
     <div>
       <AvailableMealsThree />
