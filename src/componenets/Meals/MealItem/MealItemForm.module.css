@@ -12,6 +12,7 @@
 }
 
 .form button {
+  overflow: hidden;
   z-index: 9999;
   position: absolute;
   /* width: 10%; */
