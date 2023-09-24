@@ -8,11 +8,11 @@ const MealsPageTwo = () => {
   const ctx = useContext(CartContext);
   let preventFirst = 0;
   useEffect(() => {
+    ctx.changeMenu(1);
     if (preventFirst === 0) {
       preventFirst++;
       return;
     }
-    ctx.changeMenu(1);
   }, [preventFirst, ctx]);
   return (
     <div className={style.contain}>
