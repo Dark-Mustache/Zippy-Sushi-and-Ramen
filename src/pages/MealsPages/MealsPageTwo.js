@@ -6,14 +6,16 @@ import style from "./MealsPageTwo.module.css";
 
 const MealsPageTwo = () => {
   const ctx = useContext(CartContext);
+  const { changeMenu } = ctx;
+
   let preventFirst = 0;
   useEffect(() => {
-    ctx.changeMenu(1);
     if (preventFirst === 0) {
       preventFirst++;
       return;
     }
-  }, [preventFirst, ctx]);
+    changeMenu(1);
+  }, [preventFirst, changeMenu]);
   return (
     <div className={style.contain}>
       <AvailableMealsTwo />

@@ -30,7 +30,7 @@ const MealsRoot = () => {
               }}
               style={{
                 backgroundColor: `${
-                  ctx.isOne === 1 ? "rgba(198, 40, 60, 1)" : ""
+                  ctx.isOne <= 1 ? "rgba(198, 40, 60, 1)" : ""
                 }`,
               }}
               end
