@@ -11,9 +11,19 @@ const MealsRoot = () => {
   }, [mealRoot]);
 
   const ctx = useContext(CartContext);
+  const { changeMenu } = ctx;
   console.log(ctx.isOne);
   const backHandler = () => {
-    ctx.changeMenu(-ctx.isOne);
+    changeMenu(-ctx.isOne);
+  };
+  const sushiHandler = () => {
+    changeMenu(1);
+  };
+  const ramenHandler = () => {
+    changeMenu(1);
+  };
+  const drinksHandler = () => {
+    changeMenu(1);
   };
   return (
     <section className={style.orderItemsSection}>
@@ -22,6 +32,7 @@ const MealsRoot = () => {
         <ul>
           <li>
             <NavLink
+              onClick={sushiHandler}
               to={"one"}
               className={({ isActive }) => {
                 if (isActive && ctx.isOne > 1) {
@@ -40,6 +51,7 @@ const MealsRoot = () => {
           </li>
           <li>
             <NavLink
+              onClick={ramenHandler}
               to={"two"}
               className={({ isActive }) =>
                 isActive ? style.navlinkActive : ""
@@ -50,6 +62,7 @@ const MealsRoot = () => {
           </li>
           <li>
             <NavLink
+              onClick={drinksHandler}
               to={"three"}
               className={({ isActive }) =>
                 isActive ? style.navlinkActive : ""
