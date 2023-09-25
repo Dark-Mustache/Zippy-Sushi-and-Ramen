@@ -12,7 +12,6 @@ const MealsRoot = () => {
 
   const ctx = useContext(CartContext);
   const { changeMenu } = ctx;
-  console.log(ctx.isOne);
   const backHandler = () => {
     changeMenu(-ctx.isOne);
   };
@@ -35,13 +34,13 @@ const MealsRoot = () => {
               onClick={sushiHandler}
               to={"one"}
               className={({ isActive }) => {
-                if (isActive && ctx.isOne > 1) {
+                if (isActive && ctx.isOne >= 1) {
                   return style.navlinkActive;
                 }
               }}
               style={{
                 backgroundColor: `${
-                  ctx.isOne <= 1 ? "rgba(198, 40, 60, 1)" : ""
+                  ctx.isOne < 1 ? "rgba(198, 40, 60, 1)" : ""
                 }`,
               }}
               end
