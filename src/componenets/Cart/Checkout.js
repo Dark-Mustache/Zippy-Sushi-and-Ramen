@@ -15,7 +15,7 @@ const Checkout = (props) => {
   });
 
   const isEmpty = (value) => value.trim() === "";
-  const isFiveCharsLong = (value) => value.trim().length === 5;
+  const isFiveCharsLong = (value) => value.trim().length === 6;
 
   const confirmHandler = (event) => {
     event.preventDefault();
@@ -87,7 +87,7 @@ const Checkout = (props) => {
           <label htmlFor="postal">Postal Code</label>
           <input type="text" id="postal" ref={inputPostalRef} />
           {!formInputsValidity.postal && (
-            <p>please enter a valid postal code! (= 5 charecter long)</p>
+            <p>please enter a valid postal code! (= 6 charecter long)</p>
           )}
         </div>
         <div className={cityControlClasses}>
