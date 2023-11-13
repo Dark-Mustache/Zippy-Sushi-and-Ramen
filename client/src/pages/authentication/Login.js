@@ -3,7 +3,6 @@ import { Link, Form, json, redirect, useNavigation } from "react-router-dom"; //
 import styles from "./Signup.module.css";
 import CartContext from "../../componenets/Store/cart-context";
 function Login() {
-  console.log("running");
   const ctx = useContext(CartContext);
   ctx.clearCart();
   const navigation = useNavigation();
