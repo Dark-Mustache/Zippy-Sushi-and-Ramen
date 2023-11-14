@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Form, json, redirect, useNavigation } from "react-router-dom";
 import styles from "./Signup.module.css";
+import { BASE_URL } from "../../helper";
 
 function Signup() {
   const navigation = useNavigation();
@@ -43,7 +44,7 @@ export async function action({ request, params }) {
     password: data.get("password"),
     confirmPassword: data.get("confirmPassword"),
   };
-  const response = await fetch("http://127.0.0.1:8000/api/v1/signup", {
+  const response = await fetch(`${BASE_URL}/api/v1/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -4,6 +4,7 @@ import style from "./MealsRoot.module.css";
 import App from "../../App";
 import CartContext from "../../componenets/Store/cart-context";
 import { getAuthToken } from "../../utils/auth";
+import { BASE_URL } from "../../helper";
 
 const MealsRoot = () => {
   // To scroll to top
@@ -20,7 +21,7 @@ const MealsRoot = () => {
     const sendObj = { items, isOne, totalAmount };
     const token = getAuthToken();
     async function sendCart() {
-      const response = await fetch("http://127.0.0.1:8000/api/v1/userCart", {
+      const response = await fetch(`${BASE_URL}/api/v1/userCart`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

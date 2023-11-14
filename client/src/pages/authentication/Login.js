@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, Form, json, redirect, useNavigation } from "react-router-dom"; // Import Link
 import styles from "./Signup.module.css";
 import CartContext from "../../componenets/Store/cart-context";
+import { BASE_URL } from "../../helper";
 function Login() {
   console.log("running");
   const ctx = useContext(CartContext);
@@ -42,7 +43,7 @@ export async function action({ request, params }) {
     email: data.get("loginEmail"),
     password: data.get("loginPassword"),
   };
-  const response = await fetch("http://127.0.0.1:8000/api/v1/login", {
+  const response = await fetch(`${BASE_URL}/api/v1/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

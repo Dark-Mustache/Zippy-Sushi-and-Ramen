@@ -3,6 +3,7 @@ import CartIcon from "../Cart/CartIcon";
 import style from "./HeaderBtn.module.css";
 import CartContext from "../Store/cart-context";
 import { getAuthToken } from "../../utils/auth";
+import { BASE_URL } from "../../helper";
 
 const HeaderBtn = (props) => {
   const [btnIsHighLighted, setBtnIsHighLighted] = useState(false);
@@ -15,7 +16,7 @@ const HeaderBtn = (props) => {
   useEffect(() => {
     const token = getAuthToken();
     async function getMyCart() {
-      const response = await fetch("http://127.0.0.1:8000/api/v1/userCart", {
+      const response = await fetch(`${BASE_URL}/api/v1/userCart`, {
         headers: {
           Authorization: "Bearer " + token,
         },
